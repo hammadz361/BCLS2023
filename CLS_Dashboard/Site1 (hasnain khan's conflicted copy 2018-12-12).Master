@@ -1,0 +1,313 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="CLS_Dashboard.Site1"  %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN"
+    "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+
+
+    <meta charset="utf-8" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta charset="utf-8">
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet" />
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../assets/css/demo.css" rel="stylesheet" />
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons' rel='stylesheet' type='text/css' />
+
+
+    <title>CLS Monitoring System</title>
+
+
+
+    <script type="text/javascript" src="../assets/Scripts/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript" src="../assets/Scripts/highcharts.js"></script>
+    <script type="text/javascript" src="../assets/Scripts/exporting.js"></script>
+    <script type="text/javascript" src="../assets/Scripts/highcharts-3d.js"></script>
+    <script type="text/javascript" src="../assets/Scripts/no-data-to-display.js"></script>
+
+
+    
+
+    <!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="engine1/style.css" />
+<script type="text/javascript" src="engine1/jquery.js"></script>
+<!-- End WOWSlider.com HEAD section -->
+
+
+    <script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="../assets/js/material.min.js" type="text/javascript"></script>
+
+    <!--  Dynamic Elements plugin -->
+    <script src="../assets/js/arrive.min.js"></script>
+    <!--  PerfectScrollbar Library -->
+    <script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+    <!--  Notifications Plugin    -->
+    <script src="../assets/js/bootstrap-notify.js"></script>
+    <!--  Google Maps Plugin    -->
+    <script type="text/javascript" src="../assets/js/map-api-2.js"></script>
+    <!-- Material Dashboard javascript methods -->
+    <script src="~/assets/js/material-dashboard.js?v=1.2.0"></script>
+    <!-- Material Dashboard DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/demo.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            // Javascript method's body can be found in assets/js/demos.js
+            demo.initDashboardPageCharts();
+
+        });
+    </script>
+
+    
+   
+    
+
+</head>
+<body>
+   
+    <form id="form1" runat="server">
+
+        
+      
+        <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePartialRendering="true" EnablePageMethods="true" ></asp:ScriptManager>
+         
+                 
+                          <div class="wrapper">
+                              <div id="sidebarr" class="sidebar" data-color="green" data-image="../assets/img/sidebar-1.jpg">
+                                  <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+          -->
+                                  <div class="logo">
+                                      <a href="Dashboard.aspx" class="simple-text"><b>CLS</b> Child Labour
+                                      <br>Survey<br></a>
+                                  </div>
+                                  <div class="sidebar-wrapper">
+                                      <ul class="nav">
+                                          <li class="active"><a href="Dashboard.aspx"><i class="material-icons">dashboard</i>
+                                              <p>
+                                                  Dashboard</p>
+                                              </a></li>
+
+                                           <li class=""><a href="Male_Female.aspx"><i class="material-icons">insert_chart</i>
+                                              <p>
+                                                  Age Chart</p>
+                                              </a></li>
+                                          <li><a class="nav-link collapsed" href="#submenu1" data-toggle="collapse" data-target="#submenu1"><i class="material-icons">library_books</i> Survey Progress</a>
+                                              <div class="collapse" id="submenu1" aria-expanded="false">
+                                                  <ul class="flex-column pl-2 nav">
+                                                      <li class="nav-item"><a class="nav-link collapsed py-0" href="#submenu1sub1" data-toggle="collapse" data-target="#submenu1sub1">Data Reports</a>
+                                                          <div class="collapse small" id="submenu1sub1" aria-expanded="false">
+                                                              <ul class="flex-column nav pl-4">
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=1_survey_Progress&name=Cluster-Wise Survey Progress"><i class=""></i>Survey Progress </a>
+                                                                      
+
+                                                                      <%--<a class="nav-link p-0" href="javascript:void" onclick="loadUrl('surveyProgress.aspx?id=1_survey_Progress&name=Cluster-Wise Survey Progress'); return false;">Survey Progress</a>--%>
+
+
+                                                                      <%-- <script>
+                                              <%--function goToURL() {
+                                                    location.href = 'surveyProgress.aspx?id=1_survey_Progress&name=Cluster-Wise Survey Progress';
+
+                                                }
+                                                                        </script>--%>
+                                                                     <%-- <asp:LinkButton class="nav-link p-0" ID="LinkButton1" runat="server"  OnClick="LinkButton1_Click">Survey Progress</asp:LinkButton>--%>
+                                                                  </li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=2_Household_Completion&name=Cluster-Wise Household Completion Status"><i class=""></i>Household Completion </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=3_Enumerators_Progress&name=District-Wise Enumerators Progress"><i class=""></i>Enumerators Progress </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=15_Projected_Completion&name=Projected Completion"><i class=""></i>Projected Completion </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=5_Percent_Children_Interviewed&name=Percent of Children Interviewed"><i class=""></i>Percent of Children Interviewed </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=6_District_Wise_Enumerators_Collection&name=District-Wise Enumerators Data Collection Statistics"><i class=""></i>District-Wise Enumerators Data Collection Statistics </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=7_Supervisor_time_spent&name=Supervisor time spent on field - Last Activity Day"><i class=""></i>Supervisor time spent on field - last activity day </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=14_District_Wise_Progress&name=District-Wise Working Children Progress"><i class=""></i>District-Wise Working Children Progress </a></li>
+                                                              </ul>
+                                                          </div>
+                                                          
+
+                                                        <%--  <script type="text/javascript">
+                                                              function loadUrl(newLocation) {
+                                                                  window.location = newLocation;
+                                                                  return false;
+                                                              }
+                                                        </script>--%>
+
+                                                           <script type="text/javascript">
+
+
+                                                               $(".nav a").on("click", function () {
+                                                                   $(".nav").find(".active").removeClass("active");
+                                                                   $(this).parent().addClass("active");
+                                                               });
+
+
+                                            </script>
+
+
+
+
+                                                          <%-- Monitor Submenu--%>
+                                                          <br />
+                                                          <a class="nav-link collapsed py-0" href="#submenu1sub2" data-toggle="collapse" data-target="#submenu1sub2">Field monitoring</a>
+                                                          <div class="collapse small" id="submenu1sub2" aria-expanded="false">
+                                                              <ul class="flex-column nav pl-4">
+                                                                  <li class="nav-item"><a class="nav-link p-0" style="margin-left: 20px; color: black; margin-top: 0px;" href="surveyProgress.aspx?id=8_Monitoring_Enumerator&name=Monitoring of Enumerator"><i></i>B1.Monitoring of Enumerator </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=9_Monitoring_Supervisor&name=Monitoring of Supervisor"><i class=""></i>B2.Monitoring of Supervisor </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=10_Monitoring_Observer&name=Monitoring of Observer"><i class=""></i>B3.Monitoring of Observer </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=16_Progress_Field_Monitors&name=Progress of Field monitors"><i class=""></i>B4.Progress of Field monitors </a></li>
+                                                              </ul>
+                                                          </div>
+                                                          <br />
+                                                          <a class="nav-link collapsed py-0" href="#submenu1sub20" data-toggle="collapse" data-target="#submenu1sub20">Desk monitoring</a>
+                                                          <div class="collapse small" id="submenu1sub20" aria-expanded="false">
+                                                              <ul class="flex-column nav pl-4">
+
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=1001_Text_Review&name=Text Review Required Report"><i class=""></i>D1.Unclear/Text Review Report </a></li>
+                                                                  <!-- <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=1002_Others&name=Others Report"><i class=""></i>Others Reports</a></li> -->
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1003_Dont_Know&name=Dont Know Report"><i class=""></i>D2.Dont Know Reports</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1004_Mistakes_Summarized_Overall&name=Mistakes Summarized Report"><i class=""></i>D3.Summarized Report</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1005_Mistakes_Numbers&name=Number of Mistakes"><i class=""></i>D4. Number of Mistakes</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1020&name=Others Percentage and Numbers"><i class=""></i>D5. Others Percentage & Numbers</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1021&name=Others enumerator-wise"><i class=""></i>D6. Others enumerator-wise</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1006_Mistakes_Outlier&name=Outlier Report"><i class=""></i>Outlier Report (Mistakes)</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1010&name=Household Size Report"><i class=""></i>D8. Household Size Report</a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0"  href="surveyProgress.aspx?id=1010&name=Number of children"><i class=""></i>D9. Number of children</a></li>  </ul>
+                                                          </div>
+                                                          <br />
+                                                          <%-- Observer Submenu--%><a class="nav-link collapsed py-0" href="#submenu1sub3" data-toggle="collapse" data-target="#submenu1sub3">Observer Reports</a>
+                                                          <div class="collapse small" id="submenu1sub3" aria-expanded="false">
+                                                              <ul class="flex-column nav pl-4">
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=11_Observers_Checklists&name=Observers Checklists Summary"><i class=""></i>Observers Checklists Summary </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=12_Observers's_Interviewer_evaluation_weighted&name=Observers's Interviewer evaluation - weighted"><i class=""></i>Observers's Interviewer evaluation - weighted </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=13_Observers's_Interviewer_evaluation_Absolute&name=Observers's Interviewer evaluation - Absolute"><i class=""></i>Observers's Interviewer evaluation - Absolute </a></li>
+                                                                  <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=17_Observers_Progress&name=Progress of observers"><i class=""></i>C4. Progress of observers</a></li>
+                                                              </ul>
+                                                          </div>
+                                                      </li>
+                                                  </ul>
+                                              </div>
+                                              <li ><a href="DataMap.aspx"><i class="material-icons">location_on</i>
+                                                  <p>
+                                                      Maps</p>
+                                                  </a></li>
+                                              <li id="SB_Download" runat="server"><a href="DownloadTables.aspx"><i class="material-icons text-gray">cloud_download</i>
+                                                  <p>
+                                                      Download</p>
+                                                  </a></li>
+                                              <li id="ManagementAllow" runat="server"><a href="Management.aspx"><i class="material-icons">person</i>
+                                                  <p>
+                                                      Management</p>
+                                                  </a></li>
+                                      </ul>
+                                  </div>
+                              </div>
+                              <div class="main-panel"  style="height:80%; overflow-y:hidden; overflow-x:hidden">
+                                  <nav class="navbar navbar-transparent navbar-relative" style="margin-bottom: -20px;">
+                                      <a class="navbar-brand" href="#">
+                                      <asp:Label ID="lblHeadingName" runat="server" Text=""></asp:Label>
+                                      </a>
+                                      <div class="container-fluid">
+                                          <div class="navbar-header">
+                                              <button type="button" class="navbar-toggle" data-toggle="collapse">
+                                                  <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+                                              </button>
+                                          </div>
+                                          <div class="collapse navbar-collapse">
+                                              <ul class="nav navbar-nav navbar-right">
+                                                  <li class="dropdown"><a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+                                                      
+                                                     <span style="color:green" ><asp:Label ID="lblUserLogin" runat="server" Text=""> </asp:Label></span>
+                                                      <i class="material-icons">person</i>
+                                                      <br /> <asp:Label ID="lblLastLogin" runat="server" Text=""></asp:Label>
+                                                      <p class="hidden-lg hidden-md">
+                                                          Profile</p>
+                                                      </a>
+                                                      <ul class="dropdown-menu">
+                                                          <li><a href="Change_Password.aspx">Change Password</a></li>
+                                                          <li class="divider"></li>
+                                                          <li><a onserverclick="Logout" runat="server">Logout</a></li>
+                                                      </ul>
+                                                  </li>
+                                              </ul>
+                                              <!--  <form class="navbar-form navbar-right" role="search">
+                            <div class="form-group  is-empty">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <span class="material-input"></span>
+                            </div>
+                            <button type="submit" class="btn btn-white btn-round btn-just-icon">
+                                <i class="material-icons">search</i>
+                                <div class="ripple-container"></div>
+                            </button>
+                        </form> -->
+                                          </div>
+                                      </div>
+                                  </nav>
+                                  
+                                    <!-- Start WOWSlider.com BODY section -->
+<div id="wowslider-container1" style="overflow-x:auto">
+<div class="ws_images"><ul>
+		<li><img src="data1/images/slider3100.jpg" alt="Unicef | for every child" title="Unicef | for every child" id="wows1_0"/></li>
+		<li><img src="data1/images/slider4100.jpg" alt="Stop Child Labour" title="Stop Child Labour" id="wows1_1"/></li>
+		<li><img src="data1/images/slider5100.jpg" alt="Childern should have PEN in their Hands" title="Childern should have PEN in their Hands" id="wows1_2"/></li>
+		<li><img src="data1/images/slider6100.jpg" alt="Child slavery is a crime against humanity" title="Child slavery is a crime against humanity" id="wows1_3"/></li>
+		<li><a href="http://wowslider.net"><img src="data1/images/slider7100.jpg" alt="javascript slideshow" title="Let's fight against Child Labour" id="wows1_4"/></a></li>
+		<li><img src="data1/images/slider8100.jpg" alt="" title="" id="wows1_5"/></li>
+	</ul></div>
+	<div class="ws_bullets"><div>
+		<a href="#" title="Unicef | for every child"><span><img src="data1/tooltips/slider3100.jpg" alt="Unicef | for every child"/>1</span></a>
+		<a href="#" title="Stop Child Labour"><span><img src="data1/tooltips/slider4100.jpg" alt="Stop Child Labour"/>2</span></a>
+		<a href="#" title="Childern should have PEN in their Hands"><span><img src="data1/tooltips/slider5100.jpg" alt="Childern should have PEN in their Hands"/>3</span></a>
+		<a href="#" title="Child slavery is a crime against humanity"><span><img src="data1/tooltips/slider6100.jpg" alt="Child slavery is a crime against humanity"/>4</span></a>
+		<a href="#" title="Let's fight against Child Labour"><span><img src="data1/tooltips/slider7100.jpg" alt="Let's fight against Child Labour"/>5</span></a>
+		<a href="#" title=""><span><img src="data1/tooltips/slider8100.jpg" alt=""/>6</span></a>
+	</div></div><div class="ws_script" style="position:absolute;left:-99%"><a href="http://wowslider.net">bootstrap carousel</a> by WOWSlider.com v8.8</div>
+<div class="ws_shadow"></div>
+</div>	
+<script type="text/javascript" src="engine1/wowslider.js"></script>
+<script type="text/javascript" src="engine1/script.js"></script>
+<!-- End WOWSlider.com BODY section -->
+                              </div>
+                              <div class="loading">
+                                  Loading. Please wait.<br />
+                                  <br />
+                                  <img src="../assets/img/loader.gif" alt="" />
+                              </div>
+                              <div>
+                                  <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                                  </asp:ContentPlaceHolder>
+                              </div>
+                              <div>
+                                  <footer class="footer">
+                                      <div class="container-fluid">
+                                          <nav class="pull-left">
+                                              <ul>
+                                                  <li><a href="#">Home </a></li>
+                                              </ul>
+                                          </nav>
+                                      </div>
+                                  </footer>
+                              </div>
+                          </div>
+                     
+
+    </form>
+        
+</body>
+</html>

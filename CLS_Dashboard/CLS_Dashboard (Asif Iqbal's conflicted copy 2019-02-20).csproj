@@ -1,0 +1,430 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F8AEC51E-971B-4CE1-A3AB-DA5CBF7A8F54}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CLS_Dashboard</RootNamespace>
+    <AssemblyName>CLS_Dashboard</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\..\Dropbox\SCLS\All Codes\Dashboard Code\SCLS-Monitoring_3_District\SCLS-Monitoring\bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\demo-documentation.css" />
+    <Content Include="assets\css\demo.css" />
+    <Content Include="assets\css\font.css" />
+    <Content Include="assets\css\login.css" />
+    <Content Include="assets\css\material-dashboard.css" />
+    <Content Include="assets\img\adobe.PNG" />
+    <Content Include="assets\img\apple-icon.png" />
+    <Content Include="assets\img\children2.gif" />
+    <Content Include="assets\img\children2.jpg" />
+    <Content Include="assets\img\cover.jpeg" />
+    <Content Include="assets\img\cover.jpg" />
+    <Content Include="assets\img\CSV.png" />
+    <Content Include="assets\img\Eumerators-Supervisors 3.jpg" />
+    <Content Include="assets\img\Eumerators-Supervisors-3.gif" />
+    <Content Include="assets\img\Excel.png" />
+    <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\Household.gif" />
+    <Content Include="assets\img\loader.gif" />
+    <Content Include="assets\img\mask.png" />
+    <Content Include="assets\img\new_logo.png" />
+    <Content Include="assets\img\sidebar-1.jpg" />
+    <Content Include="assets\img\sidebar-11.jpg" />
+    <Content Include="assets\img\sidebar-2.jpg" />
+    <Content Include="assets\img\sidebar-3.jpg" />
+    <Content Include="assets\img\sidebar-4.jpg" />
+    <Content Include="assets\img\SIndh _District.gif" />
+    <Content Include="assets\img\Slider-2.jpg" />
+    <Content Include="assets\img\Slider-22.jpg" />
+    <Content Include="assets\img\Slider-3.jpg" />
+    <Content Include="assets\img\Slider-33.jpg" />
+    <Content Include="assets\img\Slider-4.jpg" />
+    <Content Include="assets\img\Slider-44.jpg" />
+    <Content Include="assets\img\Slider-5.jpg" />
+    <Content Include="assets\img\Slider-55.jpg" />
+    <Content Include="assets\img\tim_80x80.png" />
+    <Content Include="assets\img\word.png" />
+    <Content Include="assets\js\arrive.min.js" />
+    <Content Include="assets\js\bootstrap-notify.js" />
+    <Content Include="assets\js\bootstrap.min.js" />
+    <Content Include="assets\js\chartist.min.js" />
+    <Content Include="assets\js\demo.js" />
+    <Content Include="assets\js\jquery-3.2.1.min.js" />
+    <Content Include="assets\js\jquery.js" />
+    <Content Include="assets\js\map-api-1.js" />
+    <Content Include="assets\js\map-api-2.js" />
+    <Content Include="assets\js\material-dashboard.js" />
+    <Content Include="assets\js\material.min.js" />
+    <Content Include="assets\js\perfect-scrollbar.jquery.min.js" />
+    <Content Include="assets\js\script.js" />
+    <Content Include="assets\js\style.css" />
+    <Content Include="assets\js\style.mod.css" />
+    <Content Include="assets\js\wowslider.js" />
+    <Content Include="assets\js\wowslider.mod.js" />
+    <Content Include="assets\js\ws-ctrl-bootstrap.svg" />
+    <Content Include="assets\Scripts\exporting.js" />
+    <Content Include="assets\Scripts\highcharts-3d.js" />
+    <Content Include="assets\Scripts\highcharts.js" />
+    <Content Include="assets\Scripts\javascriptlogin.js" />
+    <Content Include="assets\Scripts\jquery-1.12.4.min.js" />
+    <Content Include="assets\Scripts\jquery-1.4.1.min.js" />
+    <Content Include="assets\Scripts\jquery-1.7.1.js" />
+    <Content Include="assets\Scripts\jquery-1.7.1.min.js" />
+    <Content Include="assets\Scripts\no-data-to-display.js" />
+    <Content Include="assets\Scripts\ScrollableGridPlugin.js" />
+    <Content Include="bin\CLS_Dashboard.dll" />
+    <Content Include="bin\CLS_Dashboard.pdb" />
+    <Content Include="bin\itextsharp.dll" />
+    <Content Include="css\demo-documentation.css" />
+    <Content Include="data1\images\slider3100.jpg" />
+    <Content Include="data1\images\slider4100.jpg" />
+    <Content Include="data1\images\slider5100.jpg" />
+    <Content Include="data1\images\slider6100.jpg" />
+    <Content Include="data1\images\slider7100.jpg" />
+    <Content Include="data1\images\slider8100.jpg" />
+    <Content Include="data1\tooltips\slider3100.jpg" />
+    <Content Include="data1\tooltips\slider4100.jpg" />
+    <Content Include="data1\tooltips\slider5100.jpg" />
+    <Content Include="data1\tooltips\slider6100.jpg" />
+    <Content Include="data1\tooltips\slider7100.jpg" />
+    <Content Include="data1\tooltips\slider8100.jpg" />
+    <Content Include="data4\images\.picasaoriginals\IMG_20170826_124135.jpg" />
+    <Content Include="data4\images\.picasaoriginals\IMG_20170826_124143.jpg" />
+    <Content Include="data4\images\Ahmad Bhai\Shehzad Noorani %282%29.jpg" />
+    <Content Include="data4\images\Ahmad Bhai\Shehzad Noorani %285%29.jpg" />
+    <Content Include="data4\images\ChildLabor.jpg" />
+    <Content Include="data4\images\ChildLabor4.jpg" />
+    <Content Include="data4\images\ChildLabor41.jpg" />
+    <Content Include="data4\images\ChildLabor42.jpg" />
+    <Content Include="data4\images\ChildLabor45.jpg" />
+    <Content Include="data4\images\ChildLabor46.jpg" />
+    <Content Include="data4\images\ChildLabor47.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %2810%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %282%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %283%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %284%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %285%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %287%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %288%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\Shehzad Noorani %289%29.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\slider2.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\slider3.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\slider4.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\slider5.jpg" />
+    <Content Include="data4\images\fwdpicturesfordashboard\slider6.jpg" />
+    <Content Include="data4\images\IMG_20170826_124143.jpg" />
+    <Content Include="data4\images\IMG_20170826_124437.jpg" />
+    <Content Include="data4\images\IMG_20170826_124654.jpg" />
+    <Content Include="data4\images\old\ChildLabor45.jpg" />
+    <Content Include="data4\images\old\IMG_20170826_124143.jpg" />
+    <Content Include="data4\images\old\IMG_20170826_124437.jpg" />
+    <Content Include="data4\images\old\IMG_20170826_124654.jpg" />
+    <Content Include="data4\images\old\slider2.jpg" />
+    <Content Include="data4\images\old\slider2100.jpg" />
+    <Content Include="data4\images\old\slider22.jpg" />
+    <Content Include="data4\images\old\slider3.jpg" />
+    <Content Include="data4\images\old\slider3100.jpg" />
+    <Content Include="data4\images\old\slider33.jpg" />
+    <Content Include="data4\images\old\slider4.jpg" />
+    <Content Include="data4\images\old\slider4100.jpg" />
+    <Content Include="data4\images\old\slider44.jpg" />
+    <Content Include="data4\images\old\slider5.jpg" />
+    <Content Include="data4\images\old\slider5100.jpg" />
+    <Content Include="data4\images\old\slider55.jpg" />
+    <Content Include="data4\images\old\slider6100.jpg" />
+    <Content Include="data4\images\old\slider7100.jpg" />
+    <Content Include="data4\images\old\slider8100.jpg" />
+    <Content Include="data4\images\slider2.jpg" />
+    <Content Include="data4\images\slider22.jpg" />
+    <Content Include="data4\images\slider3.jpg" />
+    <Content Include="data4\images\slider3100.jpg" />
+    <Content Include="data4\images\slider33.jpg" />
+    <Content Include="data4\images\slider4.jpg" />
+    <Content Include="data4\images\slider4100.jpg" />
+    <Content Include="data4\images\slider44.jpg" />
+    <Content Include="data4\images\slider5.jpg" />
+    <Content Include="data4\images\slider5100.jpg" />
+    <Content Include="data4\images\slider55.jpg" />
+    <Content Include="data4\images\slider6100.jpg" />
+    <Content Include="data4\images\slider7100.jpg" />
+    <Content Include="data4\images\slider8100.jpg" />
+    <Content Include="data4\tooltips\slider2100.jpg" />
+    <Content Include="data4\tooltips\slider3100.jpg" />
+    <Content Include="data4\tooltips\slider4100.jpg" />
+    <Content Include="data4\tooltips\slider5100.jpg" />
+    <Content Include="data4\tooltips\slider6100.jpg" />
+    <Content Include="data4\tooltips\slider7100.jpg" />
+    <Content Include="data4\tooltips\slider8100.jpg" />
+    <Content Include="DataLoad.aspx" />
+    <Content Include="Maps.aspx" />
+    <Content Include="Listing.aspx" />
+    <Content Include="PlotOnMap.aspx" />
+    <Content Include="engine1\arrows.png" />
+    <Content Include="engine1\bullet.png" />
+    <Content Include="engine1\jquery.js" />
+    <Content Include="engine1\pause.png" />
+    <Content Include="engine1\play.png" />
+    <Content Include="engine1\script.js" />
+    <Content Include="engine1\style.css" />
+    <Content Include="engine1\style.mod.css" />
+    <Content Include="engine1\triangle.png" />
+    <Content Include="engine1\wowslider.js" />
+    <Content Include="engine1\wowslider.mod.js" />
+    <Content Include="SearchListing.aspx" />
+    <Content Include="engine4\arrows.png" />
+    <Content Include="engine4\bullet.png" />
+    <Content Include="engine4\jquery.js" />
+    <Content Include="engine4\pause.png" />
+    <Content Include="engine4\play.png" />
+    <Content Include="engine4\script.js" />
+    <Content Include="engine4\style.css" />
+    <Content Include="engine4\style.mod.css" />
+    <Content Include="engine4\triangle.png" />
+    <Content Include="engine4\wowslider.js" />
+    <Content Include="engine4\wowslider.mod.js" />
+    <Content Include="engine4\ws-ctrl-bootstrap.svg" />
+    <Content Include="Male_Female.aspx" />
+    <Content Include="Monitoring.aspx" />
+    <Content Include="Site1.Master" />
+    <Content Include="assets\js\ws-ctrl-bootstrap.eot" />
+    <Content Include="assets\js\ws-ctrl-bootstrap.ttf" />
+    <Content Include="assets\js\ws-ctrl-bootstrap.woff" />
+    <Content Include="assets\sass\material-dashboard.scss" />
+    <Content Include="data4\images\.picasa.ini" />
+    <Content Include="data4\images\.picasaoriginals\.picasa.ini" />
+    <Content Include="engine4\ws-ctrl-bootstrap.eot" />
+    <Content Include="engine4\ws-ctrl-bootstrap.ttf" />
+    <Content Include="engine4\ws-ctrl-bootstrap.woff" />
+    <Content Include="ListingProgress.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Ehtisham.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\Hasnain-Live.pubxml" />
+    <None Include="Properties\PublishProfiles\Asif.pubxml" />
+    <None Include="Properties\PublishProfiles\Hasnain-Test.pubxml" />
+    <None Include="Properties\PublishProfiles\latest_all_district.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Change_Password.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="DataMap.aspx" />
+    <Content Include="DownloadTables.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Management.aspx" />
+    <Content Include="SurveyProgress.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Change_Password.aspx.cs">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Change_Password.aspx.designer.cs">
+      <DependentUpon>Change_Password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataLoad.aspx.cs">
+      <DependentUpon>DataLoad.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataLoad.aspx.designer.cs">
+      <DependentUpon>DataLoad.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Maps.aspx.cs">
+      <DependentUpon>Maps.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Maps.aspx.designer.cs">
+      <DependentUpon>Maps.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Listing.aspx.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Listing.aspx.designer.cs">
+      <DependentUpon>Listing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PlotOnMap.aspx.cs">
+      <DependentUpon>PlotOnMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlotOnMap.aspx.designer.cs">
+      <DependentUpon>PlotOnMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DataMap.aspx.cs">
+      <DependentUpon>DataMap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DataMap.aspx.designer.cs">
+      <DependentUpon>DataMap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadTables.aspx.cs">
+      <DependentUpon>DownloadTables.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DownloadTables.aspx.designer.cs">
+      <DependentUpon>DownloadTables.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Male_Female.aspx.cs">
+      <DependentUpon>Male_Female.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Male_Female.aspx.designer.cs">
+      <DependentUpon>Male_Female.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchListing.aspx.cs">
+      <DependentUpon>SearchListing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchListing.aspx.designer.cs">
+      <DependentUpon>SearchListing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Monitoring.aspx.cs">
+      <DependentUpon>Monitoring.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Monitoring.aspx.designer.cs">
+      <DependentUpon>Monitoring.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Management.aspx.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Management.aspx.designer.cs">
+      <DependentUpon>Management.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ListingProgress.aspx.cs">
+      <DependentUpon>ListingProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListingProgress.aspx.designer.cs">
+      <DependentUpon>ListingProgress.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SurveyProgress.aspx.cs">
+      <DependentUpon>SurveyProgress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SurveyProgress.aspx.designer.cs">
+      <DependentUpon>SurveyProgress.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49843</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49844/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
