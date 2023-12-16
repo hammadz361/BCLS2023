@@ -307,6 +307,7 @@ namespace CLS_Dashboard
             //    dt = dt.AddDays(DaysCount);
             //    HH_Covered_on_the_day.Append(string.Format("'{0}',", dt.ToString("dd-MMM-yyyy")));
             //}
+            //}
 
             //draw 3rd Line Orange
 
@@ -805,7 +806,7 @@ namespace CLS_Dashboard
             var returnData = new List<string>();
 
             var Con = new SqlConnection(ConfigurationManager.ConnectionStrings["SCLSCon"].ConnectionString);
-            var sql = new SqlCommand("Select * from m_Chart_H3  " + QueryFilter.Replace("Name of ", "") + "order by District asc", Con);
+            var sql = new SqlCommand("Select * from m_Chart_H3  " + QueryFilter.Replace("Name of ", "") + "order by [Name of District] asc", Con);
             var dataAdapter = new SqlDataAdapter(sql);
             var dataset = new DataSet();
             dataAdapter.Fill(dataset);

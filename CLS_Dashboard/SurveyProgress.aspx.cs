@@ -578,14 +578,14 @@ namespace CLS_Dashboard
             else if (Report_ID == Report_15)
             {
                 query = @"select top 100  [Name of District]
-      ,[Target HHs]
-      ,[HHs Interviewed] as [HHs submitted]
-      ,[Percent Covered] as [Percent Covered C/B]
-      ,[Start Date]
-      ,[Number of Days Required]
-      ,[Projected completion date (submitted data)]
-      ,[Projected completion date (Bos)]
-        FROM [Added_Report_New1]" + Filter_Data;
+                  ,[Target HHs]
+                  ,[HHs Interviewed] as [HHs submitted]
+                  ,[Percent Covered] as [Percent Covered C/B]
+                  ,[Start Date]
+                  ,[Number of Days Required]
+                  ,[Projected completion date (submitted data)]
+                  ,[Projected completion date (Bos)]
+                    FROM [Added_Report_New1]" + Filter_Data;
                 Data_Source.Text = "Data Source: Interviewers submissions<br>";
                 Data_Source.Visible = true;
             }
@@ -1072,13 +1072,11 @@ namespace CLS_Dashboard
                 string type = "Int32";
                 int count = 1;
                 int count2 = 0;
-
+                float totalCount_B = 0;
+                float totalCount_C = 0;
                 for (int j = 0; j < dt.Columns.Count; j++)
                 {
-
                     columnName = dt.Columns[j].ColumnName.ToString();
-
-
                     if (type == dt.Columns[j].DataType.Name.ToString())
                     {
                         if (count2 == 0)
@@ -1201,10 +1199,10 @@ namespace CLS_Dashboard
                     }
                     else if ((count == 3) && (Report_ID == Report_15))
                     {
-                        int Column_B = Convert.ToInt32(GridView1.FooterRow.Cells[1].Text.ToString());
                         int Column_C = Convert.ToInt32(GridView1.FooterRow.Cells[2].Text.ToString());
-                        float Avg = Column_B == 0 || Column_C == 0 ? 0 : (Column_B / Column_C) * 100;
-                        decimal m = Convert.ToDecimal(Avg);
+                        int Column_B = Convert.ToInt32(GridView1.FooterRow.Cells[1].Text.ToString());
+                        double percentage = Column_B == 0 || Column_C == 0 ? 0 : (Convert.ToDouble(Column_C) / Convert.ToDouble(Column_B)) * 100;
+                        decimal m = Convert.ToDecimal(percentage);
                         decimal d = Math.Round(m, 2);
                         GridView1.FooterRow.Cells[count].Text = d.ToString();
                     }
@@ -1595,7 +1593,10 @@ namespace CLS_Dashboard
 
 
                     if (cellValue2 >= 90 && cellValue2 <= 100)
+                    {
                         e.Row.Cells[10].BackColor = System.Drawing.Color.YellowGreen;
+                    }
+                        
                     else if (cellValue2 >= 80 && cellValue2 < 90)
                         e.Row.Cells[10].BackColor = System.Drawing.Color.Khaki;
                     else if (cellValue2 < 80)
@@ -1680,9 +1681,9 @@ namespace CLS_Dashboard
 
                     }
 
-                    if (cellValue < 85)
-                        e.Row.Cells[columnumber].BackColor = System.Drawing.Color.Coral;
-                    else if (cellValue >= 85 && cellValue < 100)
+                    if (cellValue < 80)
+                        e.Row.Cells[columnumber].BackColor = System.Drawing.Color.Orange;
+                    else if (cellValue >= 80 && cellValue < 90)
                         e.Row.Cells[columnumber].BackColor = System.Drawing.Color.Khaki;
                     else
                         e.Row.Cells[columnumber].BackColor = System.Drawing.Color.YellowGreen;
@@ -1736,5 +1737,10 @@ namespace CLS_Dashboard
             //Filter_All_Selected_Items();
             lstSurveyTeam_SelectedIndexChanged(this, EventArgs.Empty);
         }
+
+
+
     }
+
+
 }

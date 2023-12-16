@@ -152,10 +152,10 @@
                                                         <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=7_Supervisor_time_spent&name=Supervisor time spent on field - Last Activity Day"><i class=""></i>A7.Supervisor time spent on field - last activity day </a></li>
                                                         <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=14_District_Wise_Progress&name=District-Wise Working Children Progress"><i class=""></i>A8.District-Wise Working Children Progress </a></li>
 
-                                                         <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=191_Enumerator_Wise_Covid&name=COVID-19 risk assessment questions – enumerator"><i class=""></i>A9 COVID-19 risk assessment questions – enumerator </a></li>
+                                                         <!--<li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=191_Enumerator_Wise_Covid&name=COVID-19 risk assessment questions – enumerator"><i class=""></i>A9 COVID-19 risk assessment questions – enumerator </a></li>
                                                          <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=192_Supervisor_Wise_Covid&name=COVID-19 risk assessment questions – supervisor"><i class=""></i>A10 COVID-19 risk assessment questions – supervisor  </a></li>
                                                          <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=193_District_Wise_Covid&name=COVID-19 risk assessment questions – district"><i class=""></i>A11 COVID-19 risk assessment questions – district </a></li>
-                                                         <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=194_Cluster_Wise_Covid&name= COVID-19 risk assessment questions – cluster code"><i class=""></i>A12 COVID-19 risk assessment questions – cluster code </a></li>
+                                                         <li class="nav-item"><a class="nav-link p-0" href="surveyProgress.aspx?id=194_Cluster_Wise_Covid&name= COVID-19 risk assessment questions – cluster code"><i class=""></i>A12 COVID-19 risk assessment questions – cluster code </a></li>-->
                                                     </ul>
                                                 </div>
 

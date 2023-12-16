@@ -263,15 +263,11 @@
                                                 <asp:HyperLinkField DataNavigateUrlFields="Record_Id , Section9" HeaderText="Section9" DataNavigateUrlFormatString="Monitoring.aspx?key={0}&amp;pid={1}" DataTextField="Section9" />
                                                 <asp:HyperLinkField DataNavigateUrlFields="Record_Id , Section10" HeaderText="Section10" DataNavigateUrlFormatString="Monitoring.aspx?key={0}&amp;pid={1}" DataTextField="Section10" />
                                                 
-                                                
                                             </Columns>
                                             <FooterStyle CssClass="GridFooter" ForeColor="White" />
 
                                             <PagerStyle CssClass="GridPager" />
-
                                         </asp:GridView>
-
-
                                     </div>
                                 </div>
                             </div>

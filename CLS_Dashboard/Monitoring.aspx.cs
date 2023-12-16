@@ -240,7 +240,7 @@ namespace CLS_Dashboard
             temp_table.Columns.RemoveAt(0);
             temp_table.Columns.RemoveAt(0);
 
-            try {
+            //try {
                 using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["SCLSCon"].ConnectionString))
                 using (var cmd = new SqlCommand(proc_name, con))
                 using (var da = new SqlDataAdapter(cmd))
@@ -248,8 +248,8 @@ namespace CLS_Dashboard
 
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.Add(new SqlParameter("@Key_", key));
+                var jj = key;
                     //write_to_server(cmd, "");
-
                     da.Fill(table);
 
                     table.Tables[0].Columns.Remove("Comments_Monitors");
@@ -518,10 +518,10 @@ namespace CLS_Dashboard
                 }
 
                 // set_buttons(ques_table);
-            }
-            catch (Exception ex) {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Query taking longer need indexing ')", true);
-            }
+            //}
+            //catch (Exception ex) {
+            //    ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Query taking longer need indexing ')", true);
+            //}
             
         }
         private DataTable merging_tables(DataTable main, DataTable temp_table)
@@ -930,9 +930,6 @@ namespace CLS_Dashboard
                      SqlDataReader dr = command.ExecuteReader();
                  }
                
-           
-               
-               
              
                 //updating temp tables
 
@@ -1129,6 +1126,7 @@ namespace CLS_Dashboard
                 else
                 {
                     command.CommandText = "update Summarized_Report set Field = '', Logical_Check = '', Telephone = '' where Key_ = '" + key + "' and Report_Name = '" + gotpid + "' and Field = '" + intro + "' and Logical_Check = '" + intro + "' and Telephone = '" + intro + "'";
+
                 }
                // command.Parameters.AddWithValue("@key", gotpid);
               //  command.Parameters.AddWithValue("@report_name", report_ID);

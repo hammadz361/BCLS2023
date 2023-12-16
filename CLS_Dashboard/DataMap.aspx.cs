@@ -9,13 +9,14 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Web.Security;
 using System.Text;
+using System.Web.Configuration;
 
 namespace CLS_Dashboard
 {
     public partial class DataMap : System.Web.UI.Page
     {
         static SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SCLSCon"].ConnectionString);
-        //static SqlConnection consp = new SqlConnection(ConfigurationManager.ConnectionStrings["SPCon"].ConnectionString);
+        static SqlConnection consp = new SqlConnection(ConfigurationManager.ConnectionStrings["SPCon"].ConnectionString);
 
         //keyboard shortcut Ctrl + M, P to expand or Ctrl + M, O to collapse.
 
@@ -34,6 +35,8 @@ namespace CLS_Dashboard
             public string Household_Status { get; set; }
             public string RecordImage { get; set; }
             public string DataSource { get; set; } // Add the DataSource property
+
+            public string image_base_path = "";
         }
 
         // Fetch locations from the database
@@ -66,7 +69,7 @@ namespace CLS_Dashboard
 
                     // Bind the merged data to the map
                     BindMap();
-                  
+
                 }
             }
         }
@@ -238,10 +241,10 @@ namespace CLS_Dashboard
                 }
             }
         }
-    
+
         private void loadMapData()
         {
-           
+
             // Initialize the Locations list if it is null
             if (Locations == null)
             {
@@ -452,10 +455,11 @@ namespace CLS_Dashboard
                                     //record_image = Server.MapPath("~/replace/assets/" + reader["record_image"].ToString());
                                     record_image = "assets/" + reader["record_image"].ToString().Replace("\\", "/");
                                 }
-                                else {
+                                else
+                                {
                                     record_image = "assets/img/No-Image.jpg";
                                 }
-                                
+
 
                                 monitorData.Add(new Location { Name = name, Latitude = latitude, Longitude = longitude, District = district, ClusterCode = cluster_code, Household_ID = household_id, RecordImage = record_image, DataSource = "Monitor" });
                             }
@@ -481,7 +485,7 @@ namespace CLS_Dashboard
 
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["SCLSCon"].ConnectionString))
             {
-                String query = "SELECT distinct top " + txtTopSQL.Text + " RECORDGPS_INTERVIEW_LAT as Latitude1 ,[RECORDGPS_INTERVIEW_LNG] as Longitude1, district, Observer, cluster_code, household_ID FROM [dbo].Observer1 x inner join Observer x1 on x._URI=x1._URI  where RECORDGPS_INTERVIEW_LAT is not null";
+                String query = "SELECT distinct top " + txtTopSQL.Text + " RECORDGPS_INTERVIEW_LAT as Latitude1 ,[RECORDGPS_INTERVIEW_LNG] as Longitude1, district, Observer, cluster_code, household_ID, x.record_image FROM [dbo].Observer1 x inner join Observer x1 on x._URI=x1._URI  where RECORDGPS_INTERVIEW_LAT is not null";
 
                 // Check if any districts are selected and not empty
                 if (!string.IsNullOrEmpty(lstDistricts.SelectedValue) && lstDistricts.SelectedValue != "All")
@@ -530,7 +534,7 @@ namespace CLS_Dashboard
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         while (reader.Read())
-                        {   
+                        {
                             // Create a new location object and populate its properties
                             double latitude;
                             double longitude;
@@ -543,9 +547,18 @@ namespace CLS_Dashboard
                                 string district = reader["district"].ToString();
                                 string cluster_code = reader["cluster_code"].ToString();
                                 string household_id = reader["household_ID"].ToString();
+                                string record_image = "";
+                                if (reader["record_image"] != DBNull.Value)
+                                {
+                                    //record_image = Server.MapPath("~/replace/assets/" + reader["record_image"].ToString());
+                                    record_image = "assets/" + reader["record_image"].ToString().Replace("\\", "/");
+                                }
+                                else
+                                {
+                                    record_image = "assets/img/No-Image.jpg";
+                                }
 
-
-                                observerData.Add(new Location { Name = name, Latitude = latitude, Longitude = longitude, District = district, ClusterCode = cluster_code, Household_ID = household_id, DataSource = "Observer" });
+                                observerData.Add(new Location { Name = name, Latitude = latitude, Longitude = longitude, District = district, ClusterCode = cluster_code, Household_ID = household_id, RecordImage = record_image, DataSource = "Observer" });
                             }
 
                         }
@@ -623,7 +636,7 @@ namespace CLS_Dashboard
                             {
 
                                 string latlong = reader["Location"].ToString(); ;
-                               
+
                                 // Split the data based on the delimiter (hyphen in this case)
                                 string[] parts = latlong.Split('-');
 
@@ -771,8 +784,10 @@ switch(location.DataSource) {
                                             '<p>Longitude: ' + location.Longitude + '</p>' +
                                             '<p>District: ' + location.District + '</p>' +
                                             '<p>ClusterCode: ' + location.ClusterCode + '</p>' +
-                                            '<p>Household_ID: ' + location.Household_ID + '</p>';
-                                            
+                                           '<p>Household_ID: ' + location.Household_ID + '</p>' +
+                                            '<img src=""' + location.RecordImage + '"" style=""width: 100px; height: 100px;"">' +
+                                            '<br /><input type=""button"" class=""btn btn-primary"" value=""View Image"" onclick=""viewImage(\'' + location.RecordImage + '\');"">';
+                                           
                             break;
                             case 'Supervisor':
                            contentString = '<h3>' + location.Household_ID + '</h3>' +
@@ -844,7 +859,8 @@ switch(location.DataSource) {
             return json;
         }
 
-        protected void Filter_Selected(object sender, EventArgs e) {
+        protected void Filter_Selected(object sender, EventArgs e)
+        {
             loadMapData();
         }
         protected void Chk_Main_CheckedChanged(object sender, EventArgs e)
